@@ -153,3 +153,12 @@ a:hover {
 #curr {
   opacity: .4;
 }
+
+footer {
+  padding: 2% 4% 7% 4%;
+}
+
+.footerContainer {
+  padding: 0 2%;
+  float: right;
+}
