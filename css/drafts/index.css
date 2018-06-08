@@ -22,6 +22,11 @@ body {
 }
 
 header {
+  /*animation-duration: 2s;
+  animation-delay: initial;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-name: fadeDown;*/
+
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -96,7 +101,7 @@ header {
 }
 
 .content {
-  animation-duration: 2s;
+  animation-duration: 1.75s;
   animation-delay: initial;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-name: fadeUp;
@@ -108,19 +113,6 @@ header {
 
   padding: 18% 4% 3% 4%;
   margin: 0;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 .main {
@@ -139,11 +131,9 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  padding-bottom: 6%;
 }
 
-.design {
+.photo {
   padding: 0 .5% 7% .5%;
   width: auto;
 }
@@ -171,4 +161,30 @@ footer {
 .footerContainer {
   padding: 0 2%;
   float: right;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5%, 0);
+    transform: translate3d(0, 5%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }

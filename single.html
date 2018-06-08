@@ -1,0 +1,102 @@
+<DOCUMENT! html>
+<html>
+  <head>
+    <link href="../Normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/single.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Anissa Nishioka</Title>
+    <meta name="description" content="Creator & aspiring fullstack developer">
+  </head>
+  <body>
+    <div class="headerContainer">
+      <div class="header">
+        <div class="title">
+          <div class="inner-title">ANISSA NISHIOKA</div>
+        </div>
+        <div class="navWrap">
+          <ul class="nav">
+            <li class="navItem" id="Photos"><a class="sectionNav" href="#photoPg">Photos<span class="plus">&#43;</span></a></li>
+            <li class="navItem" id="About"><a class="sectionNav" href="#aboutPg">About</a></li>
+            <li class="navItem" id="Contact"><a class="sectionNav contactNav" href="#contactPg">Contact</a></li>
+          </ul>
+          <!--<div class="menutxt">MENU</div>-->
+        </div>
+      </div>
+    </div>
+    <section class="pgWrap" id="photoScroll">
+        <div class="contentContainer" id="photoPg" flex-wrap="nowrap"; width="auto">
+          <div class="content photoCatgs" display="flex"; flex-wrap="nowrap"; width="auto">
+            <div class="photoWrap">
+              <img class="photo" id="travel" src="assets/kyoto11.jpg" alt="japan photo" height="100%">
+              <a class="photoLink travelLink" href="#"><div class="overlay"><div class="catgTitle">TRAVEL</div></div></a>
+            </div>
+            <div class="photoWrap">
+              <img class="photo" id="concerts" src="assets/concert1.jpg" alt="concert photo" height="100%">
+              <a class="photoLink concertsLink" href="#"><div class="overlay"><div class="catgTitle">CONCERTS</div></div></a>
+            </div>
+            <div class="photoWrap">
+              <img class="photo" id="people" src="assets/people2.jpg" alt="portrait photo" height="100%">
+              <a class="photoLink peopleLink" href="#"><div class="overlay"><div class="catgTitle">PEOPLE</div></div></a>
+            </div>
+          </div>
+          <div class="content travelPhotos hiddenPhotos" display="flex"; flex-wrap="nowrap"; width="auto">
+            <div class="photoWrap" >
+              <img class="photo" src="assets/hiroshima1.jpg" alt="japan photo" height="100%">
+              <!--<div class="overlay"><div class="catgTitle">TRAVEL</div></div>-->
+            </div>
+            <div class="photoWrap">
+              <img class="photo" src="assets/kyoto13.jpg" alt="concert photo" height="100%">
+            </div>
+            <div class="photoWrap">
+              <img class="photo" src="assets/kyoto12.jpg" alt="portrait photo" height="100%">
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="pgWrap" id="aboutPg">
+        <div class="contentContainer" flex-wrap="wrap"; width="100vw">
+          <div class="content">
+            <div class="me"><img src="assets/me2.jpg" height="90%";></div>
+              <p class="bio">
+                Hi, there! I'm Anissa. <br>
+                <br>
+                I'm a fourth year Cognitive Science major and Computer Science minor at UC Berkeley.
+              </p>
+          </div>
+        </div>
+    </section>
+    <section class="pgWrap" id="contactWrap">
+        <div class="contentContainer" id="contactPg" flex-wrap="wrap"; width="100vw">
+          <div class="content" id="contactContent">
+            <div class="formWrap">
+              <form class="contactForm" id="contactForm" name="contact" method="post">
+                <div class="contactInfo">
+                  <input type="text" placeholder="Name" name="name" onfocus="this.placeholder=''" onblur="this.placeholder='Name'"></input>
+                  <input type="text" placeholder="Email" name="email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'"></input>
+                </div>
+                <div class="contactMsg">
+                  <!--<input type="text" class="message"></input>-->
+                  <textarea class="message" name="message" rows="5" form="contactForm" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
+                </div>
+                <div class="contactSubmit">
+                  <input type="button" class="submit" value="submit"></input>
+                </div>
+              </form>
+            </div>
+            <!--<div class="social">
+              <a href="https://www.instagram.com/aninishioka/" class="fa fa-instagram"></a>
+              <a href="https://github.com/aninishioka" class="fa fa-github"></a>
+              <a href="https://www.linkedin.com/in/aninishioka/" class="fa fa-linkedin"></a>
+            </div>-->
+          </div>
+        </div>
+    </section>
+  </body>
+  <footer class="footer">
+    <div class="copyright">&copy Anissa Nishioka 2018</div>
+    <script src="../jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/single.js" type="text/javascript"></script>
+  </footer>
+</html>
