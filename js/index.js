@@ -10,10 +10,11 @@ function setOverlay() {
   //align overlay with img
   var travPos = $("img.travel").position().left;
   $(".overlay.travel").css({left: travPos+"px"});
+  $(".pseudo.travel").css({left: travPos+"px"});
   var conPos = $("img.concert").position().left;
-  $(".overlay.travel").css({left: conPos+"px"});
+  $(".pseudo.travel").css({left: conPos+"px"});
   var pplPos = $("img.people").position().left;
-  $(".overlay.people").css({left: pplPos+"px"});
+  $(".pseudo.people").css({left: pplPos+"px"});
 }
 
 //center element (from stackoverflow's tony l.)
@@ -28,20 +29,29 @@ function center(pseudo) {
 
 //display photo when thumbnail clicked
 function display(key) {
-  const photo = $(this).attr("data-large");
+  const newPhoto = $(this).attr("data-large");
   $("img.lrgPhoto").css({"opacity": "0"});
-  $("img.lrgPhoto").attr({"src": photo});
+  $("img.lrgPhoto").attr({"src": newPhoto});
   $("img.lrgPhoto").css({"opacity": "1"});
   //animate({opacity: 1});
 }
 
 function keyDisplay(key) {
-  console.log(this);
-  /*const photo = $(this).attr("data-large");
+  var photo = $('img.lrgPhoto').attr('src');
+  photo = photo.replace('assets/', '');
+  currTb = $(`img[src="thumbnails/${photo}"]`);
+  var nextTb;
+  var nextPhoto;
+  if (key == 39) {
+    nextTb = $(currTb).parent().next().children(':first');
+    nextPhoto = $(nextTb).attr("data-large");
+  } else {
+    nextTb = $(currTb).parent().prev().children(':first');
+    nextPhoto = $(nextTb).attr("data-large");
+  }
   $("img.lrgPhoto").css({"opacity": "0"});
-  $("img.lrgPhoto").attr({"src": photo});
+  $("img.lrgPhoto").attr({"src": nextPhoto});
   $("img.lrgPhoto").css({"opacity": "1"});
-  //animate({opacity: 1});*/
 }
 
 //transition between photo pages
@@ -66,7 +76,24 @@ function photoTransition(photoLink) {
     width: "80%"
   });
 
+  //transition pseudo to center
   center(pseudo);
+
+  setTimeout(function() {
+    //make pseudo transparent and move back to position of photoCatg
+    $(pseudo).css({opacity: 0});
+    setOverlay();
+
+    //replace photo nav page with gallery
+    $(".content.photo").hide();
+    $(".galleryWrap").css({display: 'flex'});
+    $(".galleryWrap").show();
+
+    //set up for when go back to photo catg page
+    $(pseudo).css({opacity: 1});
+    $(photoCatg).children(".photoLink").css({opacity: 1});
+    $(photoCatg).children(".photo").css({opacity: 1});
+  }, 1000);
 }
 
 $(document).ready(function() {
@@ -101,8 +128,7 @@ $(document).ready(function() {
   //display photo with arrow keypresses
   $(window).keyup(function(e) {
     const key = e.which || e.keyCode;
-    console.log(key);
-    if (!(key >= 37 && key <= 40)) {
+    if (!(key == 37 ^ key == 39)) {
       return;
     }
     keyDisplay(key);

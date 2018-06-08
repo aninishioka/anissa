@@ -74,7 +74,6 @@ h1 {
   align-items: center;
   flex: 1 1 auto;
   border: 1 solid #fff;
-  display: none;
 }
 
 .photoCatg {
@@ -134,11 +133,12 @@ img.photo {
 }
 
 .galleryWrap {
-  /*display: none;*/
+  
   box-sizing: border-box;
   align-items: center;
   vertical-align: middle;
   justify-content: center;
+  display: none;
 }
 
 .lrgPhoto {
@@ -152,34 +152,36 @@ img.photo {
   display: inline-block;
   box-sizing: border-box;
   position: absolute;
-  right: 0;
-  /*bottom: 0;*/
-  /*height: 18%;*/
-  padding: 3% 1%;
+
+  /*right: 0;*/
+  bottom: 0;
+  height: 18%;
+  padding: 1% 1% 3% 1%;
   /*width: 98%;*/
-  height: 100%;
-  width: 10%;
-  overflow-y: scroll;
+  width: 95%;
+  /*width: 10%; for horizontal nav*/
+  /*overflow-y: scroll; for horizontal nav*/
 }
 
 ul.hover {
+  overflow-x: scroll;
+  overflow-y: hidden;
   margin: 0;
-  /*opacity: 0;*/
+  opacity: 0;
   -webkit-transition: all 400ms ease-in-out;
   -moz-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
   padding: 2% .8px;
   background-color: #fff;
-  /*height: 0;*/
 }
 
 img.tb {
-  /*height: 100%;*/
-  width: 100%;
+  height: 100%;
+  /*width: 100%; for horizontal nav*/
 }
 
 li.tb {
-  /*display: inline-block;*/
+  display: inline-block;
   padding: 0 .8px;
   z-index: 3;
 }
