@@ -102,7 +102,7 @@ function photoTransition(photoLink) {
     /*$(pseudo).css({opacity: 1});
     $(photoCatg).children(".photoLink").css({opacity: 1});
     $(photoCatg).children(".photo").css({opacity: 1});*/  //jk remove bc want to fadein
-    $('.photoCatg').css({opacity: 1});
+    //$('.photoCatg').css({opacity: 1});
 
     $('ul.hover').delay(1700).animate({opacity: 1}, 800, 'linear');
     $('ul.hover').delay(1100).animate({opacity: 0}, 700, 'linear');
@@ -115,9 +115,9 @@ function transitionBack() {
 
   setTimeout(function() {
     $(".galleryWrap").hide();
-    /*$(".content.photo").show();
-    $('.photoCatg').animate({opacity: 1}, 700, 'linear');*/
-    $('.content.photo').load(document.URL +  ' .content.photo');
+    $(".content.photo").show();
+    $('.photoCatg').animate({opacity: 1}, 700, 'linear');
+    //$('.content.photo').load(document.URL +  ' .content.photo');
     $(".content.photo").show();
   }, 1200);
 
