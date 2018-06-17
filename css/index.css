@@ -60,7 +60,8 @@ h1 {
   position: relative;
   display: flex;
   margin-left: 20vw;
-  padding: 4% 4%;
+  /*padding: 4% 4%;*/
+  padding: 5% 5%;
   width: 80%;
   height: 100%;
 }
@@ -73,7 +74,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
-  border: 1 solid #fff;
 }
 
 .photoCatg {
@@ -94,6 +94,7 @@ h1 {
 
 img.photo {
   max-height: 100%;
+  width: auto;
 }
 
 .pseudo {
@@ -133,7 +134,8 @@ img.photo {
 }
 
 .galleryWrap {
-  
+  opacity: 0;
+  position: absolute;
   box-sizing: border-box;
   align-items: center;
   vertical-align: middle;
@@ -141,29 +143,60 @@ img.photo {
   display: none;
 }
 
-.lrgPhoto {
-  max-height: 100%;
+.exit {
+  position: absolute;
+  float: left;
+  top: 3%;
+  left: 0;
+  padding: 1%;
+  font-size: 4em;
+  font-weight: 100;
+  color: #F28E8E;
+}
+
+.exit:hover {
+  cursor: pointer;
+}
+
+.largePhotoWrap {
   height: 100%;
+  max-height: 100%;
+  width: fit-content;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+}
+
+.lrgPhoto {
+  display: block;
+  max-height: 100%;
+  height: 87%;
   max-width: 98%;
   width: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .tbNavWrap {
   display: inline-block;
   box-sizing: border-box;
   position: absolute;
-
-  /*right: 0;*/
   bottom: 0;
   height: 18%;
   padding: 1% 1% 3% 1%;
-  /*width: 98%;*/
   width: 95%;
-  /*width: 10%; for horizontal nav*/
-  /*overflow-y: scroll; for horizontal nav*/
+  overflow-y: hidden;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
 }
 
 ul.hover {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: space-between;
+  position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
   margin: 0;
@@ -181,13 +214,15 @@ img.tb {
 }
 
 li.tb {
-  display: inline-block;
-  padding: 0 .8px;
+  display: flex;
+  flex: 1 1 auto;
+  /*display: inline-block;*/
+  padding: 0 .5%;
   z-index: 3;
 }
 
 .tbNavWrap:hover > ul.hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .pg.about {
