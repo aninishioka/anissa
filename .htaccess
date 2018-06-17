@@ -1,0 +1,5 @@
+ AuthUserFile .htpasswd
+AuthGroupFile /dev/null
+AuthName “super secret website“
+AuthType Basic
+require valid-user
