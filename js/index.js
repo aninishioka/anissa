@@ -67,24 +67,18 @@ function keyDisplay(key) {
 function photoTransition(photoLink) {
   const photoCatg = $(photoLink).parent();
   const photoCatgSibs = $(photoCatg).siblings();
-  const pseudo = $(photoLink).siblings(".pseudo");
+  //const pseudo = $(photoLink).siblings(".pseudo");
 
   //isolate chosen category
   $('.photoCatg').animate({opacity: 0}, 700, 'linear');
   //photoCatgSibs.animate({opacity: 0}, 300);
-  $(".pg.photo").css({overflow: "hidden"});
+  //$(".pg.photo").css({overflow: "hidden"});
 
   //$(pseudo).css({opacity: 1});
 
   /*//remove overlay
   $(photoCatg).children(".photoLink").css({opacity: 0});
   $(photoCatg).children(".photo").css({opacity: 0});*/ //glide transition
-
-  //make pg and content fit window
-  $(".content.photo").css({
-    overflow: "hidden",
-    width: "80%"
-  });
 
   /*$(".galleryWrap").show();
   $(".galleryWrap").css({display: 'flex'}); experimenting*/
@@ -95,7 +89,7 @@ function photoTransition(photoLink) {
   setTimeout(function() {
     //make pseudo transparent and move back to position of photoCatg
     //$(pseudo).css({opacity: 0}); glide transition
-    setOverlay();
+    //setOverlay(); glide transition
 
     //replace photo nav page with gallery
     $(".content.photo").hide();
@@ -120,11 +114,11 @@ function transitionBack() {
   $('.galleryWrap').animate({opacity: 0}, 700, 'linear');
 
   setTimeout(function() {
-    $(".content.photo").hide();
+    $(".galleryWrap").hide();
     /*$(".content.photo").show();
     $('.photoCatg').animate({opacity: 1}, 700, 'linear');*/
     $('.content.photo').load(document.URL +  ' .content.photo');
-    $(".content.photo").show()
+    $(".content.photo").show();
   }, 1200);
 
 }

@@ -134,6 +134,7 @@ img.photo {
 }
 
 .galleryWrap {
+  /*display: flex;*/
   opacity: 0;
   position: absolute;
   box-sizing: border-box;
@@ -141,6 +142,8 @@ img.photo {
   vertical-align: middle;
   justify-content: center;
   display: none;
+  overflow: hidden;
+  width: 80%;
 }
 
 .exit {
@@ -206,6 +209,7 @@ ul.hover {
   transition: all 400ms ease-in-out;
   padding: 2% .8px;
   background-color: #fff;
+  /*box-shadow: 0 -3.6px 3.6px -3.6px #888888;*/
 }
 
 img.tb {
