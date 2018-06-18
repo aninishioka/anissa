@@ -181,7 +181,8 @@ img.photo {
 }
 
 .tbNavWrap {
-  display: inline-block;
+  /*display: inline-block;*/
+  display: flex;
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
@@ -191,14 +192,47 @@ img.photo {
   overflow-y: hidden;
   overflow-x: scroll;
   flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.arrow {
+  /*height: 50%;
+  width: 50%;
+  border-style: solid;
+  border-width: 1px 1px 0px 0px;
+  border-color:  #F28E8E;
+  transition: border-width 150ms ease-in-out;*/
+}
+
+.tbNav.arrowWrap {
+  display: inline-block;
+  width: 5%;
+  height: 100%;
+  align-items: center;
+}
+
+.tbNav.arrow {
+  height: auto;
+  width: 100%;
+  transform: rotate(180deg);
+  opacity: 1;
+  font-size: 5em;
+  text-align: center;
+}
+
+.hoverWrap {
+  display: inline-block;
+  width: 98%;
+  opacity: 1;
 }
 
 ul.hover {
+  min-width: 70%;
   display: flex;
   flex: 1 1 auto;
   flex-wrap: nowrap;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -225,7 +259,7 @@ li.tb {
   z-index: 3;
 }
 
-.tbNavWrap:hover > ul.hover {
+.tbNavWrap:hover ul.hover {
   opacity: 1 !important;
 }
 
