@@ -67,6 +67,8 @@ function photoTransition(photoLink) {
   const photoCatg = $(photoLink).parent();
   const photoCatgSibs = $(photoCatg).siblings();
   const catgName = $(photoCatg).attr('data-catg');
+  const currGallery = $(`.galleryWrap[data-catg='${catgName}']`);
+  const currPhoto = $(`.hover[data-catg='${catgName}']`).children(':first').children().attr('data-large');
   //const pseudo = $(photoLink).siblings(".pseudo");
 
   //isolate chosen category
@@ -89,7 +91,7 @@ function photoTransition(photoLink) {
 
     //replace photo nav page with gallery
     $(".content.photo").hide();
-    const currGallery = $(`.galleryWrap[data-catg='${catgName}']`);
+    $(`img.lrgPhoto[data-catg='${catgName}']`).attr({"src": currPhoto});
     $(currGallery).css({display: 'flex'});
     $(currGallery).show();
     $(currGallery).delay(700).animate({opacity: 1}, 700, 'linear');
