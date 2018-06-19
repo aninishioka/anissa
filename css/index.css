@@ -232,7 +232,7 @@ ul.hover {
   flex: 1 1 auto;
   flex-wrap: nowrap;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -243,6 +243,7 @@ ul.hover {
   transition: all 400ms ease-in-out;
   padding: 2% .8px;
   background-color: #fff;
+  /*background-color: rgba(253,227,227, .4);*/
   /*box-shadow: 0 -3.6px 3.6px -3.6px #888888;*/
 }
 
@@ -272,7 +273,7 @@ li.tb {
 }
 
 footer {
-  padding: 2% 0;
+  padding: 1% 0;
   text-align: center;
   opacity: .5;
   font-size: .9em;
