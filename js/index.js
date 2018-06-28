@@ -21,7 +21,6 @@ function setOverlay() {
 function center(pseudo) {
   photoCatg = $(pseudo).parent();
   const left = Math.max(0, ($(".photo.content").innerWidth() - photoCatg.width()) / 2);
-  //const left = $(".lrgPhoto").position().left;
   offset = left - photoCatg.position().left;
   $(pseudo).animate({
     left: `+=${offset}`
@@ -37,13 +36,13 @@ function display() {
   //animate({opacity: 1});
 }
 
-function keyDisplay(key, gallery) {
+function seqDisplay(dir, gallery) {
   var photo = $(`img.lrgPhoto[data-catg='${gallery}']`).attr('src');
   photo = photo.replace('assets/', '');
-  currTb = $(`img[src="thumbnails/${photo}"]`);
+  currTb = $(`img.tb[src="thumbnails/${photo}"]`);
   var nextTb;
   var nextPhoto;
-  if (key == 39) {
+  if (dir == 39 || $(dir).attr('data-dir') == 'next') {
     nextTb = $(currTb).parent().next().children(':first');
     //if at last photo, loop back to first
     if (nextTb.length === 0) {
@@ -69,49 +68,23 @@ function photoTransition(photoLink) {
   const catgName = $(photoCatg).attr('data-catg');
   const currGallery = $(`.galleryWrap[data-catg='${catgName}']`);
   const currPhoto = $(`.hover[data-catg='${catgName}']`).children(':first').children().attr('data-large');
-  //const pseudo = $(photoLink).siblings(".pseudo");
 
   //isolate chosen category
   $('.photoCatg').animate({opacity: 0}, 700, 'linear');
-  //photoCatgSibs.animate({opacity: 0}, 300); glide
-
-  //$(pseudo).css({opacity: 1}); glide
-
-  /*//remove overlay
-  $(photoCatg).children(".photoLink").css({opacity: 0});
-  $(photoCatg).children(".photo").css({opacity: 0});*/ //glide transition
-
-  /*//transition pseudo to center
-  center(pseudo);*/ //glide transition
 
   setTimeout(function() {
-    //make pseudo transparent and move back to position of photoCatg
-    //$(pseudo).css({opacity: 0}); glide transition
-    //setOverlay(); glide transition
-
     //replace photo nav page with gallery
     $(".content.photo").hide();
     $(`img.lrgPhoto[data-catg='${catgName}']`).attr({"src": currPhoto});
     $(currGallery).css({display: 'flex'});
     $(currGallery).show();
     $(currGallery).delay(700).animate({opacity: 1}, 700, 'linear');
-    /*$(".galleryWrap").css({display: 'flex'}); //just have it like this from the start!!!!
-    $(".galleryWrap").show();
-    $(".galleryWrap").delay(700).animate({opacity: 1}, 700, 'linear');*/
-
-    //set up for when go back to photo catg page
-    /*$(pseudo).css({opacity: 1});
-    $(photoCatg).children(".photoLink").css({opacity: 1});
-    $(photoCatg).children(".photo").css({opacity: 1});*/  //jk remove bc want to fadein
-
-    $('ul.hover').delay(1700).animate({opacity: 1}, 800, 'linear');
-    $('ul.hover').delay(1100).animate({opacity: 0}, 700, 'linear');
+    /*$(".galleryWrap").css({display: 'flex'}); //just have it like this from the start!!!!*/
   }, 1100);
 }
 
 //photo gallery back to photoCatg
 function transitionBack() {
-  console.log('hi');
   $('.galleryWrap').animate({opacity: 0}, 700, 'linear');
 
   setTimeout(function() {
@@ -123,8 +96,23 @@ function transitionBack() {
 
 }
 
+//make thumbnail nav appear
+var navVisible;
+function tbNavOn() {
+  $('ul.hover').css({
+    opacity: '1',
+    'z-index': '20'
+  });
+  navVisible = true;
+}
 
-
+function tbNavOff() {
+  $('ul.hover').css({
+    opacity: 0,
+    'z-index': '5'
+  });
+  navVisible = false;
+}
 
 $(document).ready(function() {
   //align overlay on load
@@ -160,17 +148,24 @@ $(document).ready(function() {
     if (!(key == 37 ^ key == 39)) {
       return;
     }
-    keyDisplay(key, currGallery);
+    seqDisplay(key, currGallery);
+  });
+
+  //display photo with next/prev buttons
+  $('.clickNav').click(function() {
+    seqDisplay(this, currGallery);
   });
 
   //back to photoCatg when X clicked
   $('.exit').click(transitionBack);
 
-  //$(".photoLink").click(photoTransition);
-
-  //center photo on window resizes
-  /*$(window).on('resize', function() {
-    if (!galleryOpen) return;
-    else center(currGallery);
-  });*/
+  //toggle thumbnail nav
+  $('.hoverToggle.button').click(tbNavOn);
+  $('.tbNavWrap').mouseleave(function() {
+    console.log(navVisible);
+    if (!navVisible) {
+      return;
+    }
+    tbNavOff();
+  });
 });
