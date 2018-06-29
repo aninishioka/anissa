@@ -118,7 +118,9 @@ function tbNavOff() {
 
 $(document).ready(function() {
   //align overlay on load
-  setOverlay();
+  window.onload = function() {
+    setOverlay();
+  }
   //align and resize overlay when window resizes
   $(window).on('resize', setOverlay);
 
