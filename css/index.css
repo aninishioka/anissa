@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: auto;
   font-family: 'Roboto', sans-serif;
@@ -25,10 +26,16 @@ ul, a {
                                   supported by Chrome and Opera */
 }
 
+.flex, li.tb {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header {
   box-sizing: content-box;
   position: fixed;
-  display: flex;
   flex: 1 1 auto;
   height: 100vh;
   width: fit-content;
@@ -67,7 +74,6 @@ h1 {
 
 .content, .galleryWrap {
   position: relative;
-  display: flex;
   margin-left: 20vw;
   padding: 5% 5%;
   width: 80%;
@@ -104,17 +110,8 @@ img.photo {
   width: auto;
 }
 
-.pseudo {
-  position: absolute;
-  display: flex;
-  top: 0;
-  height: 100%;
-  opacity: 0;
-}
-
 .overlay {
   position: absolute;
-  display: flex;
   top: 0;
   height: 100%;
   background: rgba(0, 0, 0, .6);
@@ -141,9 +138,9 @@ img.photo {
 }
 
 .galleryWrap {
-  /*display: flex;*/
   opacity: 0;
   position: absolute;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   align-items: center;
   vertical-align: middle;
@@ -155,6 +152,9 @@ img.photo {
 
 .galL, .galR {
   position: absolute;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   top: 0;
   width: 50%;
@@ -174,21 +174,30 @@ img.photo {
 
 .prev, .next {
   opacity: .6;
-  font-size: .9em;
+  font-size: 1em;
 }
 
 .prev {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
   margin-left: 8%;
 }
 
 .next{
-  transform: rotate(90deg);
+  /*transform: rotate(90deg);*/
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
   margin-right: 8%;
 }
 
 .prev:hover, .next:hover {
-  opacity: 1;
+  opacity: .9;
   cursor: pointer;
 }
 
@@ -217,7 +226,6 @@ img.photo {
   max-height: 100%;
   width: fit-content;
   box-sizing: content-box;
-  display: flex;
   align-items: center;
 }
 
@@ -235,7 +243,7 @@ img.photo {
   align-items: center;
   vertical-align: middle;
   height: 12.5%;
-  opacity: .6;
+  opacity: .5;
   z-index: 10;
 }
 
@@ -247,15 +255,19 @@ img.photo {
 }
 
 .hoverToggle.button {
-  display: flex;
   align-items: center;
   vertical-align: middle;
   justify-content: center;
   font-size: 1.2em;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
 
 .tbNavWrap, .hoverToggle.container {
-  display: flex;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
@@ -279,7 +291,6 @@ img.photo {
 
 ul.hover {
   min-width: 70%;
-  display: flex;
   flex: 1 1 auto;
   flex-wrap: nowrap;
   flex-flow: row;
@@ -303,7 +314,6 @@ img.tb {
 }
 
 li.tb {
-  display: flex;
   flex: 1 1 auto;
   padding: 0 .5%;
   margin-right: .5%;

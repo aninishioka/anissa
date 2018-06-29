@@ -11,7 +11,7 @@
     <link rel="icon" href="assets/favicon.png">
   </head>
   <body>
-    <div class="header">
+    <div class="header flex">
       <nav class="nav">
         <h1 class="nav title noselect">ANISSA<br>NISHIOKA</h1>
         <ul class="nav menu">
@@ -23,44 +23,41 @@
     </div>
     <!--photo page-->
     <div class="pg photo" id="photoPg">
-      <div class="content photo">
+      <div class="content photo flex">
         <!--photo gallery navigation-->
         <div class="photoCatg" data-catg="travel">
           <img class="photo travel" src="assets/kyoto11.jpg" alt="japan photo">
-          <!--<img class="pseudo travel" src="assets/kyoto11.jpg" alt="japan photo">-->
-          <a class="photoLink travel" href="#"><div class="overlay travel"><h1 class="photoCatg title">TRAVEL</h1></div></a>
+          <a class="photoLink travel" href="#"><div class="overlay travel flex"><h1 class="photoCatg title">TRAVEL</h1></div></a>
         </div>
         <div class="photoCatg" data-catg="concert">
           <img class="photo concert" src="assets/concert1.JPG" alt="concert photo">
-          <!--<img class="pseudo concert" src="assets/concert1.jpg" alt="concert photo">-->
-          <a class="photoLink concert" href="#"><div class="overlay concert"><h1 class="photoCatg title">CONCERT</h1></div></a>
+          <a class="photoLink concert" href="#"><div class="overlay concert flex"><h1 class="photoCatg title">CONCERT</h1></div></a>
         </div>
         <div class="photoCatg people" data-catg="people">
           <img class="photo people" src="assets/people2.jpg" alt="portrait photo">
-          <!--<img class="pseudo concert" src="assets/people2.jpg" alt="concert photo">-->
-          <a class="photoLink people" href="#"><div class="overlay people"><h1 class="photoCatg title">PEOPLE</h1></div></a>
+          <a class="photoLink people" href="#"><div class="overlay people flex"><h1 class="photoCatg title">PEOPLE</h1></div></a>
         </div>
       </div>
       <!--travel image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap" data-catg="travel">
+      <div class="photo galleryWrap flex" data-catg="travel">
         <div class='galL'>
-          <div class='prev clickNav noselect' data-dir='prev'>PREV</div>
+          <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
         </div>
         <div class='galR'>
-          <div class='next clickNav noselect' data-dir='next'>NEXT</div>
+          <div class='next clickNav noselect' data-dir='next'><!--&#9661;-->&#9660;</div>
         </div>
         <div class="exit">
           &#215;
         </div>
-        <div class="largePhotoWrap" data-catg="travel">
+        <div class="largePhotoWrap flex" data-catg="travel">
           <img class="lrgPhoto" src="assets/kyoto11.jpg" alt="japan photo 1" data-catg="travel">
         </div>
-        <div class='hoverToggle container'>
-          <div class='hoverToggle button'>&uarr;</div>
+        <div class='hoverToggle container flex'>
+          <div class='hoverToggle button flex'><!--&uarr;-->&#9661;</div>
         </div>
-        <div class="tbNavWrap" data-catg="travel">
+        <div class="tbNavWrap flex" data-catg="travel">
           <div class="hoverWrap">
-            <ul class="hover travel" data-catg="travel">
+            <ul class="hover travel flex" data-catg="travel">
               <li class="tb">
                   <img class="tb" src="thumbnails/kyoto11.jpg" alt="japan photo 1" data-large="assets/kyoto11.jpg" data-description="Byodoin Temple/Uji, Japan">
               </li>
@@ -105,25 +102,25 @@
         </div>
       </div>
       <!--people image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap" data-catg="people">
+      <div class="photo galleryWrap flex" data-catg="people">
         <div class='galL'>
-          <div class='prev clickNav noselect' data-dir='prev'>PREV</div>
+          <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
         </div>
         <div class='galR'>
-          <div class='next clickNav noselect' data-dir='next'>NEXT</div>
+          <div class='next clickNav noselect' data-dir='next'>&#9660;</div>
         </div>
         <div class="exit">
           &#215;
         </div>
-        <div class="largePhotoWrap" data-catg="people">
+        <div class="largePhotoWrap flex" data-catg="people">
           <img class="lrgPhoto" src="assets/people14.jpg" alt="japan photo 1" data-catg="people">
         </div>
-        <div class='hoverToggle container'>
-          <div class='hoverToggle button'>&uarr;</div>
+        <div class='hoverToggle container flex'>
+          <div class='hoverToggle button flex'>&#9661;</div>
         </div>
-        <div class="tbNavWrap" data-catg='people'>
+        <div class="tbNavWrap flex" data-catg='people'>
           <div class="hoverWrap">
-            <ul class='hover' data-catg='people'>
+            <ul class='hover flex' data-catg='people'>
               <li class="tb">
                   <img class="tb" src="thumbnails/people14.jpg" alt="people photo 1" data-large="assets/people14.jpg" data-description="">
               </li>
@@ -159,25 +156,25 @@
         </div>
       </div>
       <!--people image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap" data-catg="concert">
+      <div class="photo galleryWrap flex" data-catg="concert">
         <div class='galL'>
-          <div class='prev clickNav noselect' data-dir='prev'>PREV</div>
+          <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
         </div>
         <div class='galR'>
-          <div class='next clickNav noselect' data-dir='next'>NEXT</div>
+          <div class='next clickNav noselect' data-dir='next'>&#9660;</div>
         </div>
         <div class="exit">
           &#215;
         </div>
-        <div class="largePhotoWrap" data-catg="concert">
+        <div class="largePhotoWrap flex" data-catg="concert">
           <img class="lrgPhoto" src="assets/concert1.JPG" alt="concert photo 1" data-catg="concert">
         </div>
-        <div class='hoverToggle container'>
-          <div class='hoverToggle button'>&uarr;</div>
+        <div class='hoverToggle container flex'>
+          <div class='hoverToggle button flex'>&#9661;</div>
         </div>
-        <div class="tbNavWrap" data-catg='concert'>
+        <div class="tbNavWrap flex" data-catg='concert'>
           <div class="hoverWrap">
-            <ul class='hover' data-catg='concert'>
+            <ul class='hover flex' data-catg='concert'>
               <li class="tb">
                   <img class="tb" src="thumbnails/concert1.JPG" alt="concert photo 1" data-large="assets/concert1.JPG" data-description="">
               </li>
@@ -206,12 +203,12 @@
     </div>
     <!--about page-->
     <div class="pg about" id="aboutPg">
-      <div class="content about">
+      <div class="content about flex">
       </div>
     </div>
     <!--contact page-->
     <div class="pg contact" id="contactPg">
-      <div class="content contact">
+      <div class="content contact flex">
       </div>
     </div>
   </body>

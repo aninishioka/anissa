@@ -103,6 +103,7 @@ function tbNavOn() {
     opacity: '1',
     'z-index': '20'
   });
+  $('.hoverToggle.button').css({opacity: 0});
   navVisible = true;
 }
 
@@ -111,6 +112,7 @@ function tbNavOff() {
     opacity: 0,
     'z-index': '5'
   });
+  $('.hoverToggle.button').css({opacity: 1});
   navVisible = false;
 }
 
