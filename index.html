@@ -15,9 +15,9 @@
       <nav class="nav">
         <h1 class="nav title noselect">ANISSA<br>NISHIOKA</h1>
         <ul class="nav menu">
-          <li class="nav photos"><a class="sectionNav photos" href="#photoPg">Photos</a></li>
-          <li class="nav about"><a class="sectionNav about" href="#aboutPg">About</a></li>
-          <li class="nav contact"><a class="sectionNav contact" href="#contactPg">Contact</a></li>
+          <li class="nav photos"><a class="sectionNav photos" href="#photoPg">photos</a></li>
+          <li class="nav about"><a class="sectionNav about" href="#aboutPg">about</a></li>
+          <li class="nav contact"><a class="sectionNav contact" href="#contactPg">contact</a></li>
         </ul>
       </nav>
     </div>
@@ -41,10 +41,10 @@
       <!--travel image gallery with thumbnail carousel-->
       <div class="photo galleryWrap flex" data-catg="travel">
         <div class='galL'>
-          <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
+          <div class='prev clickNav noselect' data-dir='prev'><!--<i class='fa fa-angle-double-left'>&#9660</i>;-->&#9660;</div>
         </div>
         <div class='galR'>
-          <div class='next clickNav noselect' data-dir='next'><!--&#9661;-->&#9660;</div>
+          <div class='next clickNav noselect' data-dir='next'><!--&#9661;<i class='fa fa-angle-double-right'></i>-->&#9660;</div>
         </div>
         <div class="exit">
           &#215;
@@ -53,7 +53,7 @@
           <img class="lrgPhoto" src="assets/kyoto11.jpg" alt="japan photo 1" data-catg="travel">
         </div>
         <div class='hoverToggle container flex'>
-          <div class='hoverToggle button flex'><!--&#9661;-->&#10095;</div>
+          <div class='hoverToggle button flex'><!--&#9661;&#10095;--><i class='fa fa-angle-double-up'></i></div>
         </div>
         <div class="tbNavWrap flex" data-catg="travel">
           <div class="hoverWrap">
@@ -211,17 +211,18 @@
       <div class="content contact flex">
         <div class='form-wrap'>
           <form action='' target='_self' method='post'>
-            <input type="text" value="Name" name='name'>
-            <input type="text" value="Email" name='email'><br>
-            <input type="text" value="Message" name='message'><br>
+            <input type="text" placeholder="Name" name='name' onfocus="this.placeholder=''" onblur="this.placeholder='Name'" required>
+            <input type="text" placeholder="Email" name='email' onfocus="this.placeholder=''" onblur="this.placeholder='Email'"><br>
+            <textarea type="text" rows='5' placeholder="Message" name='message' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea><br>
             <input type="submit" value="Submit">
+            <div class='social'>
+              <ul class='social-icons'>
+                <li class='social-icon'><a class="linkedin-button" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aninishioka/"><i class="fa fa-linkedin-square"></i></a></li>
+                <li class='social-icon'><a class="instagram-button" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/aninishioka/"><i class="fa fa-instagram"></i></a></li>
+                <li class='social-icon'><a class="email-button" target="_blank" rel="noopener noreferrer" href="mailto:ani.nishioka@berkeley.com"><i class="fa fa-envelope-o"></i></a></li>
+              </ul>
+            </div>
           </form>
-          <!--<div class='form-top'>
-            <form>
-            </form>
-          </div>
-          <div class='form-bottom'>
-          </div>-->
         </div>
       </div>
     </div>
