@@ -262,7 +262,7 @@ img.photo {
   align-items: center;
   vertical-align: middle;
   justify-content: center;
-  font-size: 1.2em;
+  font-size: 1.7em;
   /*-webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -364,6 +364,8 @@ textarea {
   width: 100%;
   height: 25%;
   clear: left;
+  resize: none;
+  line-height: 1.2em;
 }
 
 input[type=text]:focus, textarea:focus {
