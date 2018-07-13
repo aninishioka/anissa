@@ -338,7 +338,6 @@ li.tb {
 
 .form-wrap {
   height: 100%;
-  display: flex;
   flex-wrap: nowrap;
   vertical-align: middle;
   align-items: center;
@@ -389,14 +388,14 @@ input[type=submit] {
 
 input[type=submit]:hover {
   cursor: pointer;
+  /*background-color: #ef7777;*/
 }
 
 input[type=submit]:active {
-  background-color: #f26d6d;
+  background-color: #ea4949; /*#f26d6d*/
 }
 
 .social {
-  display: flex;
   margin-top: 7%;
   width: 100%;
 }
@@ -410,6 +409,47 @@ li.social-icon {
   width: fit-content;
   font-size: 1.3em;
   margin-right: 1.5%;
+}
+
+.me, .bio {
+  vertical-align: middle;
+  align-items: center;
+  height: 100%;
+}
+
+.me {
+  width: 40%;
+}
+
+img.me {
+  max-height: 80%;
+  width: 95%;
+  height: auto;
+  justify-content: center;
+}
+
+.bio {
+  width: 60%;
+  padding: 5%;
+}
+
+p {
+  line-height: 1.7em;
+  opacity: .7;
+}
+
+.intro {
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+.pink {
+  color: #ed6060;
+}
+
+.block {
+  display: block;
+  width: 100%;
 }
 
 footer {
