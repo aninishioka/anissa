@@ -454,6 +454,15 @@ p {
   width: 100%;
 }
 
+.biolink {
+  color: #ed6060;
+}
+
+.biolink:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 footer {
   padding: 1% 0;
   text-align: center;

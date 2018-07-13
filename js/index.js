@@ -125,7 +125,7 @@ $(document).ready(function() {
   $(window).on('resize', setOverlay);
 
   //scroll to section
-  $(".sectionNav").click(function(e) {
+  $(".scroll").click(function(e) {
       e.preventDefault();
       var section = $(this).attr("href");
       $("html, body").animate({
