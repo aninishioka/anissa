@@ -118,14 +118,14 @@ function tbNavOff() {
 
 //clear form
 function resetform($form) {
-  $form.css({opacity: 0});
+  $('input, textarea').css({opacity: 0});
   $form.find('input:text, textarea').val('');
 
   $('.thanks').css({opacity: 1});
 
   setTimeout(function() {
     $('.thanks').animate({opacity: 0}, 300, 'linear');
-    $form.animate({opacity: 1}, 700, 'linear');
+    $('input, textarea').animate({opacity: 1}, 700, 'linear');
   }, 1000);
 }
 
