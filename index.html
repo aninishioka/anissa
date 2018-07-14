@@ -1,14 +1,14 @@
 <DOCUMENT! html>
 <html>
   <head>
-    <link href="css/Normalize.css" type="text/css" rel="stylesheet">
-    <link href="css/index.css" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/Normalize.css" type="text/css" rel="stylesheet"/>
+    <link href="css/index.css" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <Title>Anissa Nishioka</Title>
     <meta name="description" content="Creator & aspiring fullstack developer">
-    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png"/>
   </head>
   <body>
     <div class="header flex">
@@ -229,10 +229,12 @@
         <div class='form-wrap flex'>
           <!--contact form-->
           <form action='' target='_self' method='post' name='contact'>
-            <input type="text" placeholder="Name" name='name' onfocus="this.placeholder=''" onblur="this.placeholder='Name'" required>
-            <input type="text" placeholder="Email" name='email' onfocus="this.placeholder=''" onblur="this.placeholder='Email'"><br>
-            <textarea type="text" rows='8' placeholder="Message" name='message' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea><br>
-            <input type="submit" value="Submit">
+            <div class='inputWrap'>
+              <input type="text" placeholder="Name" name='name' onfocus="this.placeholder=''" onblur="this.placeholder='Name'" required>
+              <input type="text" placeholder="Email" name='email' onfocus="this.placeholder=''" onblur="this.placeholder='Email'"><br>
+              <textarea type="text" rows='8' placeholder="Message" name='message' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea><br>
+              <input type="submit" value="Submit">
+            </div>
             <!--social media links-->
             <div class='social flex'>
               <ul class='social-icons'>
