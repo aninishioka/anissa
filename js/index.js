@@ -116,6 +116,20 @@ function tbNavOff() {
   navVisible = false;
 }
 
+//clear form
+function resetform($form) {
+  $form.css({opacity: 0});
+  $form.find('input:text, textarea').val('');
+
+  $('.thanks').css({opacity: 1});
+
+  setTimeout(function() {
+    $('.thanks').animate({opacity: 0}, 300, 'linear');
+    $form.animate({opacity: 1}, 700, 'linear');
+  }, 1000);
+}
+
+
 $(document).ready(function() {
   //align overlay on load
   window.onload = function() {
@@ -172,4 +186,42 @@ $(document).ready(function() {
     }
     tbNavOff();
   });
+
+  //send message form to firebase
+  const fs = firebase.firestore();
+
+  const settings = {timestampsInSnapshots: true};
+  fs.settings(settings);
+
+  $form = $('form[name=contact]');
+
+  $form.submit(function(e) {
+    e.preventDefault();
+    var n = $('input[name=name]').val();
+    var em = $('input[name=email]').val();
+    var m = $('textarea[name=message]').val();
+
+    fs.collection("messages").add({
+      name: `${n}`,
+      email: `${em}`,
+      msg: `${m}`
+    })
+    .then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+
+    fs.collection("messages").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
+
+    resetform($form);
+  });
+
+
+
 });

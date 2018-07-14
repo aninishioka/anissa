@@ -228,7 +228,7 @@
       <div class="content contact flex">
         <div class='form-wrap flex'>
           <!--contact form-->
-          <form action='' target='_self' method='post'>
+          <form action='' target='_self' method='post' name='contact'>
             <input type="text" placeholder="Name" name='name' onfocus="this.placeholder=''" onblur="this.placeholder='Name'" required>
             <input type="text" placeholder="Email" name='email' onfocus="this.placeholder=''" onblur="this.placeholder='Email'"><br>
             <textarea type="text" rows='8' placeholder="Message" name='message' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea><br>
@@ -242,12 +242,35 @@
               </ul>
             </div>
           </form>
+          <div class='thanks pink'>
+            Thank you for the message!
+          </div>
         </div>
       </div>
     </div>
   </body>
   <footer>
     <div class="copyright">&copy Anissa Nishioka 2018</div>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDJm6eiVIVrbfAJEpQG64Vyhm64q0QFNB4",
+        authDomain: "aninishioka-githubio.firebaseapp.com",
+        databaseURL: "https://aninishioka-githubio.firebaseio.com",
+        projectId: "aninishioka-githubio",
+        storageBucket: "aninishioka-githubio.appspot.com",
+        messagingSenderId: "150349937375"
+      };
+      firebase.initializeApp(config);
+      /*var firestore = firebase.firestore();
+      const settings = {timestampsInSnapshots: true};
+
+      firestore.settings(settings);*/
+    </script>
     <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
   </footer>
