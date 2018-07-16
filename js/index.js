@@ -135,6 +135,7 @@ $(document).ready(function() {
   window.onload = function() {
     setOverlay();
   }
+
   //align and resize overlay when window resizes
   $(window).on('resize', setOverlay);
 
