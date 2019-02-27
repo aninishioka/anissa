@@ -77,7 +77,7 @@ ul, a {
   padding: 0 2%;
 }
 
-.nav {
+nav {
   text-align: center;
 }
 
@@ -98,7 +98,7 @@ h1 {
   overflow: hidden;
 }
 
-.pg.photo {
+#photoPg {
   overflow-x: scroll;
 }
 
@@ -110,7 +110,7 @@ h1 {
   height: 100%;
 }
 
-.content /*.photo*/ {
+.content {
   display: flex;
   overflow-x: scroll;
   flex-flow: row;
@@ -120,7 +120,7 @@ h1 {
   flex: 1 1 auto;
 }
 
-.content.photo {
+#photoContent {
   width: fit-content;
   justify-content: space-between;
 }
@@ -128,12 +128,10 @@ h1 {
 .photoCatg {
   box-sizing: content-box;
   position: relative;
-  /*padding: 0 1%;*/
   margin: 0 1%;
   height: 100%;
   max-height: 100%;
   width: fit-content;
-  /*cubic-bezier(.17,.67,.82,.66)*/
   -webkit-transition-timing-function: cubic-bezier(.13,.68,.97,.61);
   -moz-transition-timing-function: cubic-bezier(.13,.68,.97,.61);
   -o-transition-timing-function: cubic-bezier(.13,.68,.97,.61);
@@ -141,7 +139,7 @@ h1 {
   transition-timing-function: cubic-bezier(.13,.68,.97,.61);
 }
 
-.photoCatg::after {
+div.photoCatg::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -153,7 +151,7 @@ h1 {
   opacity: 0;
 }
 
-.photoCatg:hover::after {
+div.photoCatg:hover::after {
   opacity: 1;
   -webkit-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -179,7 +177,7 @@ h1 {
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-img.photo {
+.photo {
   max-height: 100%;
   width: auto;
   -webkit-animation-name: fadeIn; /* Safari 4.0 - 8.0 */
@@ -192,10 +190,6 @@ img.photo {
   color: #fff;
   height: auto;
   width: auto;
-  /*text-align: center;
-  height: auto;
-  width: auto;
-  position: absolute;*/
 }
 
 .galleryWrap {
@@ -247,7 +241,7 @@ img.photo {
   margin-left: 8%;
 }
 
-.next{
+.next {
   transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -269,7 +263,6 @@ img.photo {
   padding: 1%;
   font-size: 4em;
   font-weight: 100;
-  /*color: #F28E8E;*/
   color: #F28E8E;
   opacity: .6;
 }
@@ -344,7 +337,7 @@ img.photo {
   opacity: 1;
 }
 
-ul.hover {
+.hover {
   min-width: 70%;
   flex: 1 1 auto;
   flex-wrap: nowrap;
@@ -373,15 +366,11 @@ li.tb {
   z-index: 3;
 }
 
-/*.tbNavWrap:hover ul.hover {
-  opacity: 1 !important;
-}*/
-
-.pg.about {
+#aboutPg {
   background: rgba(255,255,255, 1);
 }
 
-.pg.contact {
+#contactPg {
   height: 90%;
 }
 
@@ -443,11 +432,10 @@ input[type=submit] {
 
 input[type=submit]:hover {
   cursor: pointer;
-  /*background-color: #ef7777;*/
 }
 
 input[type=submit]:active {
-  background-color: #ea4949; /*#f26d6d*/
+  background-color: #ea4949; 
 }
 
 .social {
@@ -455,7 +443,7 @@ input[type=submit]:active {
   width: 100%;
 }
 
-ul.social-icons {
+#socialIcons {
   width: 100%;
 }
 

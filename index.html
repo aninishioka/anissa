@@ -12,34 +12,34 @@
   </head>
   <body>
     <div class="header flex">
-      <nav class="nav">
-        <h1 class="nav title noselect">ANISSA<br>NISHIOKA</h1>
-        <ul class="nav menu">
-          <li class="nav photos"><a class="sectionNav photos scroll" href="#photoPg">photos</a></li>
-          <li class="nav about"><a class="sectionNav about scroll" href="#aboutPg">about</a></li>
-          <li class="nav contact"><a class="sectionNav contact scroll" href="#contactPg">contact</a></li>
+      <nav>
+        <h1 class="title noselect">ANISSA<br>NISHIOKA</h1>
+        <ul class="menu">
+          <li><a class="sectionNav" href="#photoPg">photos</a></li>
+          <li><a class="sectionNav" href="#aboutPg">about</a></li>
+          <li><a class="sectionNav" href="#contactPg">contact</a></li>
         </ul>
       </nav>
     </div>
     <!--photo page-->
-    <div class="pg photo" id="photoPg">
-      <div class="content photo flex">
+    <div class="pg" id="photoPg">
+      <div class="content flex" id="photoContent">
         <!--photo gallery navigation-->
         <div class="photoCatg" data-catg="travel">
-          <img class="photo travel" src="assets/kyoto11.jpg" alt="japan photo">
-          <a class="photoLink travel" href="#"><h1 class="photoCatg title">TRAVEL</h1></a>
+          <img class="photo" src="assets/kyoto11.jpg" alt="japan photo">
+          <a class="photoLink" href="#"><h1 class="photoCatg title">TRAVEL</h1></a>
         </div>
-        <div class="photoCatg people" data-catg="people">
-          <img class="photo people" src="assets/people2.jpg" alt="portrait photo">
-          <a class="photoLink people" href="#"><h1 class="photoCatg title">PEOPLE</h1></a>
+        <div class="photoCatg" data-catg="people">
+          <img class="photo" src="assets/people2.jpg" alt="portrait photo">
+          <a class="photoLink" href="#"><h1 class="photoCatg title">PEOPLE</h1></a>
         </div>
         <div class="photoCatg" data-catg="concert">
-          <img class="photo concert" src="assets/concert1.JPG" alt="concert photo">
-          <a class="photoLink concert" href="#"><h1 class="photoCatg title">CONCERT</h1></a>
+          <img class="photo" src="assets/concert1.JPG" alt="concert photo">
+          <a class="photoLink" href="#"><h1 class="photoCatg title">CONCERT</h1></a>
         </div>
       </div>
       <!--travel image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap flex" data-catg="travel">
+      <div class="galleryWrap flex" data-catg="travel">
         <div class='galL'>
           <div class='prev clickNav noselect' data-dir='prev'><!--<i class='fa fa-angle-double-left'>&#9660</i>;-->&#9660;</div>
         </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="tbNavWrap flex" data-catg="travel">
           <div class="hoverWrap">
-            <ul class="hover travel flex" data-catg="travel">
+            <ul class="hover flex" data-catg="travel">
               <li class="tb">
                   <img class="tb" src="thumbnails/kyoto11.jpg" alt="japan photo 1" data-large="assets/kyoto11.jpg" data-description="Byodoin Temple/Uji, Japan">
               </li>
@@ -102,7 +102,7 @@
         </div>
       </div>
       <!--people image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap flex" data-catg="people">
+      <div class="galleryWrap flex" data-catg="people">
         <div class='galL'>
           <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
         </div>
@@ -156,7 +156,7 @@
         </div>
       </div>
       <!--concert image gallery with thumbnail carousel-->
-      <div class="photo galleryWrap flex" data-catg="concert">
+      <div class="galleryWrap flex" data-catg="concert">
         <div class='galL'>
           <div class='prev clickNav noselect' data-dir='prev'>&#9660;</div>
         </div>
@@ -202,8 +202,8 @@
       </div>
     </div>
     <!--about page-->
-    <div class="pg about" id="aboutPg">
-      <div class="content about flex">
+    <div class="pg" id="aboutPg">
+      <div class="content flex">
         <div class='me flex'>
           <img class ='me' src='assets/me.jpg'>
         </div>
@@ -211,7 +211,7 @@
         <div class='bio flex'>
           <div class='block'>
             <p>
-              <h1 class='intro biotext pink'>
+              <h1 class='intro pink'>
                   Hi, there!<br>
                   My name is Anissa.
               </h1>
@@ -224,8 +224,8 @@
       </div>
     </div>
     <!--contact page-->
-    <div class="pg contact" id="contactPg">
-      <div class="content contact flex">
+    <div class="pg" id="contactPg">
+      <div class="content flex">
         <div class='form-wrap flex'>
           <!--contact form-->
           <form action='' target='_self' method='post' name='contact'>
@@ -237,7 +237,7 @@
             </div>
             <!--social media links-->
             <div class='social flex'>
-              <ul class='social-icons'>
+              <ul id="socialIcons">
                 <li class='social-icon'><a class="linkedin-button" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aninishioka/"><i class="fa fa-linkedin-square"></i></a></li>
                 <li class='social-icon'><a class="instagram-button" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/aninishioka/"><i class="fa fa-instagram"></i></a></li>
                 <li class='social-icon'><a class="email-button" target="_blank" rel="noopener noreferrer" href="mailto:ani.nishioka@berkeley.com"><i class="fa fa-envelope-o"></i></a></li>

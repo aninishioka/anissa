@@ -4,7 +4,6 @@ function display() {
   $("img.lrgPhoto").css({"opacity": "0"});
   $("img.lrgPhoto").attr({"src": newPhoto});
   $("img.lrgPhoto").css({"opacity": "1"});
-  //animate({opacity: 1});
 }
 
 function seqDisplay(dir, gallery) {
@@ -35,7 +34,6 @@ function seqDisplay(dir, gallery) {
 //transition between photo pages
 function photoTransition(photoLink) {
   const photoCatg = $(photoLink).parent();
-  const photoCatgSibs = $(photoCatg).siblings();
   const catgName = $(photoCatg).attr('data-catg');
   const currGallery = $(`.galleryWrap[data-catg='${catgName}']`);
   const currPhoto = $(`.hover[data-catg='${catgName}']`).children(':first').children().attr('data-large');
@@ -45,12 +43,11 @@ function photoTransition(photoLink) {
 
   setTimeout(function() {
     //replace photo nav page with gallery
-    $(".content.photo").hide();
+    $("#photoContent").hide();
     $(`img.lrgPhoto[data-catg='${catgName}']`).attr({"src": currPhoto});
     $(currGallery).css({display: 'flex'});
     $(currGallery).show();
     $(currGallery).delay(700).animate({opacity: 1}, 700, 'linear');
-    /*$(".galleryWrap").css({display: 'flex'}); //just have it like this from the start!!!!*/
   }, 1100);
 }
 
@@ -60,9 +57,9 @@ function transitionBack() {
 
   setTimeout(function() {
     $(".galleryWrap").hide();
-    $(".content.photo").show();
+    $("#photoContent").show();
     $('.photoCatg').animate({opacity: 1}, 700, 'linear');
-    $(".content.photo").show();
+    $("#photoContent").show();
   }, 1200);
 
 }
@@ -70,7 +67,7 @@ function transitionBack() {
 //make thumbnail nav appear
 var navVisible;
 function tbNavOn() {
-  $('ul.hover').css({
+  $('.hover').css({
     opacity: '1',
     'z-index': '20'
   });
@@ -79,7 +76,7 @@ function tbNavOn() {
 }
 
 function tbNavOff() {
-  $('ul.hover').css({
+  $('.hover').css({
     opacity: 0,
     'z-index': '5'
   });
@@ -104,7 +101,7 @@ function resetform($form) {
 $(document).ready(function() {
 
   //scroll to section
-  $(".scroll").click(function(e) {
+  $(".sectionNav").click(function(e) {
       e.preventDefault();
       var section = $(this).attr("href");
       $("html, body").animate({
