@@ -1,34 +1,3 @@
-//USE PSEUDO ELEMENT INSTEAD???
-function setOverlay() {
-  //set overlay width to same as img width
-  document.querySelectorAll(".photoCatg").forEach(photo => {
-    let ctg = photo.getAttribute("data-catg");
-    $(`.overlay.${ctg}`).css({width: $(`img.${ctg}`).width() + "px"});
-  });
-  /*$(".overlay.travel").css({width: `${$("img.travel").width()}px`});
-  $(".overlay.concert").css({width: `${$("img.concert").width()}px`});
-  $(".overlay.people").css({width: `${$("img.people").width()}px`});*/
-
-  //align overlay with img
-  var travPos = $("img.travel").position().left;
-  $(".overlay.travel").css({left: travPos+"px"});
-  $(".pseudo.travel").css({left: travPos+"px"});
-  var conPos = $("img.concert").position().left;
-  $(".pseudo.travel").css({left: conPos+"px"});
-  var pplPos = $("img.people").position().left;
-  $(".pseudo.people").css({left: pplPos+"px"});
-}
-
-//center element (from stackoverflow's tony l.)
-function center(pseudo) {
-  let photoCatg = $(pseudo).parent();
-  const left = Math.max(0, ($(".photo.content").innerWidth() - photoCatg.width()) / 2);
-  offset = left - photoCatg.position().left;
-  $(pseudo).animate({
-    left: `+=${offset}`
-  }, 1000);
-}
-
 //display photo when thumbnail clicked
 function display() {
   const newPhoto = $(this).attr("data-large");
@@ -133,13 +102,6 @@ function resetform($form) {
 
 
 $(document).ready(function() {
-  //align overlay on load
-  window.onload = function() {
-    setOverlay();
-  }
-
-  //align and resize overlay when window resizes
-  $(window).on('resize', setOverlay);
 
   //scroll to section
   $(".scroll").click(function(e) {
