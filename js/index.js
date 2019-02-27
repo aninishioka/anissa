@@ -1,11 +1,13 @@
+//USE PSEUDO ELEMENT INSTEAD???
 function setOverlay() {
   //set overlay width to same as img width
-  var travWidth = $("img.travel").width();
-  $(".overlay.travel").css({width: travWidth+"px"});
-  var conWidth = $("img.concert").width();
-  $(".overlay.concert").css({width: conWidth+"px"});
-  var pplWidth = $("img.people").width();
-  $(".overlay.people").css({width: pplWidth+"px"});
+  document.querySelectorAll(".photoCatg").forEach(photo => {
+    let ctg = photo.getAttribute("data-catg");
+    $(`.overlay.${ctg}`).css({width: $(`img.${ctg}`).width() + "px"});
+  });
+  /*$(".overlay.travel").css({width: `${$("img.travel").width()}px`});
+  $(".overlay.concert").css({width: `${$("img.concert").width()}px`});
+  $(".overlay.people").css({width: `${$("img.people").width()}px`});*/
 
   //align overlay with img
   var travPos = $("img.travel").position().left;
@@ -19,7 +21,7 @@ function setOverlay() {
 
 //center element (from stackoverflow's tony l.)
 function center(pseudo) {
-  photoCatg = $(pseudo).parent();
+  let photoCatg = $(pseudo).parent();
   const left = Math.max(0, ($(".photo.content").innerWidth() - photoCatg.width()) / 2);
   offset = left - photoCatg.position().left;
   $(pseudo).animate({
